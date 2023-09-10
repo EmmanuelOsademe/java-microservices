@@ -1,6 +1,6 @@
 package com.emmydev.fraud.controller;
 
-import com.emmydev.fraud.model.FraudCheckResponse;
+import com.emmydev.clients.fraud.FraudCheckResponse;
 import com.emmydev.fraud.service.FraudCheckService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,6 @@
 package com.emmydev.customer.validation.annotations;
 
-import jakarta.validation.Payload;
-
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented

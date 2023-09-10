@@ -2,8 +2,9 @@ package com.emmydev.customer.model;
 
 import com.emmydev.customer.validation.annotations.PasswordMatches;
 import com.emmydev.customer.validation.annotations.ValidEmail;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 @Data
 @PasswordMatches

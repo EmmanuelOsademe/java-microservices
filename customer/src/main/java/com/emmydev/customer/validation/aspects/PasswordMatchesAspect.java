@@ -2,8 +2,10 @@ package com.emmydev.customer.validation.aspects;
 
 import com.emmydev.customer.model.CustomerRegistrationRequest;
 import com.emmydev.customer.validation.annotations.PasswordMatches;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
 
 public class PasswordMatchesAspect implements ConstraintValidator<PasswordMatches, Object> {
 
