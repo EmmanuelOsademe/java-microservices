@@ -1,5 +1,6 @@
 package com.emmydev.customer.service;
 
+import com.emmydev.amqp.producers.RabbitMQMessageProducer;
 import com.emmydev.clients.fraud.FraudCheckResponse;
 import com.emmydev.clients.fraud.FraudClient;
 import com.emmydev.clients.notification.NotificationClient;
@@ -15,7 +16,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 
 @Slf4j
 @Service
-public record CustomerService(CustomerRepository customerRepository, FraudClient fraudClient, NotificationClient notificationClient) {
+public record CustomerService(CustomerRepository customerRepository, FraudClient fraudClient, NotificationClient notificationClient, RabbitMQMessageProducer messageProducer) {
 
     public void registerCustomer(CustomerRegistrationRequest request){
         // todo: Check if email is not taken
@@ -49,7 +50,8 @@ public record CustomerService(CustomerRepository customerRepository, FraudClient
                 .subject(subject)
                 .message(message)
                 .build();
-        String notificationResponse = notificationClient().sendNotification(notificationRequest);
-        log.info(notificationResponse);
+//        String notificationResponse = notificationClient().sendNotification(notificationRequest);
+//        log.info(notificationResponse);
+        messageProducer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
     }
 }
