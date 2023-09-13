@@ -35,7 +35,7 @@ services:
     ports:
       - "9411:9411"
 
-  rabbitmg:
+  rabbitmq:
     image: rabbitmq:3.9.11-management-alpine
     container_name: rabbitmq
     ports:
