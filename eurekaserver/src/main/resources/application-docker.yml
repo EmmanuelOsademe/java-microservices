@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-server
+  zipkin:
+    base-url: http://zipkin:9411
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
+
+#
+#  eureka.instance.non-secure-port-enabled=true
+#  eureka.instance.secure-port-enabled=false
+#  server.port=${grpc.server.port}
+#  eureka.client.serviceUrl.defaultZone=http://localhost:8791/eureka/
+#  eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
+#  eureka.instance.non-secure-port=${grpc.server.port}
