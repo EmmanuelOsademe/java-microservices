@@ -7,7 +7,7 @@ spring:
   datasource:
     username: emmydev
     url: jdbc:postgresql://postgres:5432/notification
-    password: TnDcEO2023%@dec
+    password: password
   jpa:
     properties:
       hibernate:
